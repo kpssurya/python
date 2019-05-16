@@ -1,4 +1,18 @@
-
+def isUniqueCharsString(s):
+    if len(s) > 256:
+        return False
+        
+    char_set = [False] * 128
+    
+    for i in range(0, len(s)):
+        val = ord(s[i])
+        if char_set[val]:
+            return False
+            
+        char_set[val] = True
+        
+    return True
+        
 def numOfMostRepeatedCharsInString(s):
     d = {}
     for c in s:
@@ -32,3 +46,6 @@ def stringWithMostRepeatedChars(l):
 l = ["aaaab", "aabb", "abc", "bbbbb"]
 s = stringWithMostRepeatedChars(l)
 print (s)
+
+print(isUniqueCharsString("abcd"))
+
